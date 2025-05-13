@@ -104,7 +104,6 @@ export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 uv pip install --pre torch --index-url https://download.pytorch.org/whl/cu126
 cd ../
 export TORCH_CUDA_ARCH_LIST="8.6;9.0"
-export TORCH_CUDA_ARCH_LIST='all'
 uv pip install pybind11
 uv pip install scikit-build-core
 uv pip install --no-build-isolation -r requirements.txt
