@@ -51,6 +51,8 @@ Official implementation of <strong>Continuous 3D Perception Model with Persisten
 
 ### Installation
 
+Conda
+
 1. Clone CUT3R.
 ```bash
 git clone https://github.com/CUT3R/CUT3R.git
@@ -78,6 +80,42 @@ cd src/croco/models/curope/
 python setup.py build_ext --inplace
 cd ../../../../
 ```
+
+Vnev
+```bash
+
+sudo apt-get install ninja-build
+sudo apt-get install build-essential libtorch-dev
+
+git clone https://github.com/CUT3R/CUT3R.git
+cd CUT3R
+uv init --python 3.11 CUT3R
+cd VUT3R
+uv venv
+source .venv/bin/activate
+uv pip install --upgrade pip setuptools wheel
+uv pip install fvcore iopath ninja
+
+export CUDA_HOME=/usr/lib/nvidia-cuda-toolkit
+export PATH=$CUDA_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+
+uv pip install --pre torch --index-url https://download.pytorch.org/whl/cu126
+cd ../
+export TORCH_CUDA_ARCH_LIST="8.6;9.0"
+export TORCH_CUDA_ARCH_LIST='all'
+uv pip install pybind11
+uv pip install scikit-build-core
+uv pip install --no-build-isolation -r requirements.txt
+uv pip install --no-build-isolation   git+https://github.com/nerfstudio-project/gsplat.git
+uv pip install evo
+uv pip install open3d
+cd src/croco/models/curope/
+# https://github.com/CUT3R/CUT3R/issues/7
+uv pip install --no-build-isolation .
+
+```
+
 
 ### Download Checkpoints
 
