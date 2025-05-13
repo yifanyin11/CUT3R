@@ -86,6 +86,7 @@ Vnev
 
 sudo apt-get install ninja-build
 sudo apt-get install build-essential libtorch-dev
+sudo apt-get install python3.11-dev
 
 git clone https://github.com/CUT3R/CUT3R.git
 cd CUT3R
