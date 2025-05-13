@@ -113,6 +113,7 @@ uv pip install open3d
 cd src/croco/models/curope/
 # https://github.com/CUT3R/CUT3R/issues/7
 uv pip install --no-build-isolation .
+cd ../../../../
 
 ```
 
