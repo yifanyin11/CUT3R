@@ -81,7 +81,7 @@ python setup.py build_ext --inplace
 cd ../../../../
 ```
 
-Vnev
+Venv
 ```bash
 
 sudo apt-get install ninja-build
